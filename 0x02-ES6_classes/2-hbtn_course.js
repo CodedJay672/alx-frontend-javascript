@@ -7,7 +7,7 @@ export default class HolbertonCourse {
     }
 
    if (typeof length !== 'number') {
-      throw new Error('TypeError: Length should be a numbber');
+      throw new Error('TypeError: Length must be a numbber');
    } else {
       this._length = length;
    }
