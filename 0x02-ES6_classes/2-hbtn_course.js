@@ -12,7 +12,7 @@ export default class HolbertonCourse {
       this._length = length;
    }
    
-   if (typeof students !== 'object' || students == null) {
+   if (typeof students !== 'object' || students == null || students.length <= 0) {
       throw 'students array cannot be empty';
    } else {
       this._students = students;
