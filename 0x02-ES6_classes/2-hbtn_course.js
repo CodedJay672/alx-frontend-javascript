@@ -15,7 +15,7 @@ export default class HolbertonCourse {
    if (typeof students !== 'object') {
       throw 'students array cannot be empty';
    } else {
-      this.students = students;
+      this._students = students;
   }
 }
   set name(arg) {
@@ -40,5 +40,9 @@ export default class HolbertonCourse {
 
   set students(arg) {
     this._students = arg;
+  }
+
+  get students() {
+    return this._students;
   }
 }
