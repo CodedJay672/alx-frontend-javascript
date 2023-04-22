@@ -19,7 +19,11 @@ export default class HolbertonCourse {
   }
 }
   set name(arg) {
-    this._name = arg;
+    if (typeof arg != 'string') {
+      throw 'Name must be a string';
+    } else {
+	this._name = arg;
+    }
   }
 
   get name() {
