@@ -1,14 +1,15 @@
 export default function updateStudentGradeByCity(arg, city, newGrades) {
-  return arg.filter(items => items.location === city).map(obj => {
+  return arg.filter((items) => items.location === city).map((obj) => {
+    const myObj = obj;
     for (let x = 0; x < newGrades.length; x += 1) {
-      if (obj.id === newGrades[x].studentId) {
-        obj.grade = newGrades[x].grade;
+      if (myObj.id === newGrades[x].studentId) {
+        myObj.grade = newGrades[x].grade;
         break;
       } else {
-        obj.grade = 'N/A';
-	break;
+        myObj.grade = 'N/A';
+        break;
       }
     }
-    return obj;
+    return myObj;
   });
 }
