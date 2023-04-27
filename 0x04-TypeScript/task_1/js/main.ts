@@ -18,3 +18,27 @@ interface Funct {
 function printTeacher(firstName: string, lastName: string) {
   return `${firstName[0]}. ${lastName}`;
 }
+
+interface Student {
+  (firstName: string, lastName: string);
+  ():string;
+  ():string;
+}
+
+interface cons {
+  firstName: string;
+  lastName: string;
+}
+
+class StudentClass {
+  constructor(arg: cons) {
+    this._firstName = arg.firstName;
+    this._lastName = arg.lastName;
+  }
+  displayName() {
+    return `${firstName}`;
+  }
+  workOnHomework() {
+    return 'Currently working';
+  }
+}
