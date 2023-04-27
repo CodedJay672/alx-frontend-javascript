@@ -41,3 +41,15 @@ function createEmployee(salary: number | string): DirectorInterface | TeacherInt
     return new Director();
   }
 }
+
+// function from task 6
+
+type Subjects = "Math" | "History";
+
+function teachClass(todayClass: Subjects) {
+  if (todayClass === "Math") {
+    return 'Teaching Math';
+  } else {
+    return 'Teaching History';
+  }
+}
