@@ -7,4 +7,6 @@ interface Teacher {
   ...arg: boolean;
 }
 
-
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
