@@ -1,13 +1,13 @@
-interface Teacher {
-  firstName: string;
-  lastName: string;
-  fullTimeEmployee?: string;
-  yearsOfExperience: number;
+export interface Teacher {
+  readonly firstName: string;
+  readonly lastName: string;
+  fullTimeEmployee: string;
+  yearsOfExperience?: number;
   location: string;
-  arg: boolean;
+  [arg: boolean]: any;
 }
 
-interface Directors extends Teacher {
+export interface Directors extends Teacher {
   numberOfReports: number;
 }
 
@@ -19,10 +19,9 @@ function printTeacher(firstName: string, lastName: string) {
   return `${firstName[0]}. ${lastName}`;
 }
 
-interface Student {
-  (firstName: string, lastName: string);
-  ():string;
-  ():string;
+export interface Student {
+  displayName(): string;
+  workOnHomework(): string;
 }
 
 interface cons {
