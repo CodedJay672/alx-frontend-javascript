@@ -34,17 +34,25 @@ class Teacher implements TeacherInterface {
   }
 }
 
-function createEmployee(salary: number | string): DirectorInterface | TeacherInterface {
-  if (Number(salary) < 500) {
+export function createEmployee(salary: number | string): DirectorInterface | TeacherInterface {
+  if (salary < 500) {
     return new Teacher();
-  } else {
-    return new Director();
   }
+  return new Director();
 }
 
-// function from task 6
+export function isDirector(employee: DirectorInterface | TeacherInterface): employee is DirectorInterface {
+  return (employee as DirectorInterface).workDirectorTasks !== undefined;
+}
 
-type Subjects = "Math" | "History";
+export function executeWork(employee: DirectorInterface | TeacherInterface) {
+  if (isDirector(employee)) {
+    return employee.workDirectorTasks();
+  }
+  return employee.workTeacherTasks();
+}
+
+export type Subjects = "Math" | "History";
 
 function teachClass(todayClass: Subjects) {
   if (todayClass === "Math") {
