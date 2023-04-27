@@ -1,6 +1,6 @@
 import RowID from './interface';
 import RowElement from './interface';
 
-function insertRow(row: RowElement): number;
-function deleteRow(rowId: RowID): void;
-function updateRow(rowId: RowID, row: RowElement): number;
+export declare function insertRow(row: RowElement): number;
+export declare function deleteRow(rowId: RowID): void;
+export declare function updateRow(rowId: RowID, row: RowElement): number;
