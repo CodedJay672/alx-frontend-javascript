@@ -1,5 +1,5 @@
 export type RowID = number;
-export interface RowElement {
+export default interface RowElement {
   firstName: string;
   lastName: string;
   age?: number;

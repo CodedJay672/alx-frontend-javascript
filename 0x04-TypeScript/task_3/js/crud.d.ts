@@ -1,6 +1,6 @@
-import RowID from './interface.ts';
-import RowElement from './interface.ts';
+import RowID from './interface';
+import RowElement from './interface';
 
-type insertRow(row: RowElement) = number;
-type deleteRow(rowId: RowID) = void;
-type updateRow(rowId: RowID, row: RowElement) = number;
+function insertRow(row: RowElement): number;
+function deleteRow(rowId: RowID): void;
+function updateRow(rowId: RowID, row: RowElement): number;
