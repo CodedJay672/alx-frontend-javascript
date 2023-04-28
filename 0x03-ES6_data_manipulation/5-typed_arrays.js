@@ -6,5 +6,5 @@ export default function createInt8TypedArray(length, position, value) {
   } else {
     arrayBuffer[position] = value;
   }
-  return new ArrayBuffer(arrayBuffer);
+  return new DataView(buffer);
 }
