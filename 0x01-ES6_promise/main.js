@@ -1,6 +1,3 @@
-import handleResponseFromAPI from "./2-then";
+import handleProfileSignup from "./3-all";
 
-const promise = Promise.resolve();
-const res = handleResponseFromAPI(promise);
-
-console.log(res);
+handleProfileSignup();
