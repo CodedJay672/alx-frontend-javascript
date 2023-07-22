@@ -8,7 +8,7 @@ function handleProfileSignup(){
 
   // return the body object value and first/last names from
   // createUser()
-  Promise.all([uploadPhoto(), createUser()]).then((arrayOfResults) => {
+  return Promise.all([uploadPhoto(), createUser()]).then((arrayOfResults) => {
     // do something
     // try console.log
     console.log(`${arrayOfResults[0].body} ${arrayOfResults[1].firstName} ${arrayOfResults[1].lastName}`);
