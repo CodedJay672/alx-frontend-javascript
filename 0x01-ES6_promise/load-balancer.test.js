@@ -1,24 +1,12 @@
-import loadBalancer from "./7-load_balancer";
+import divideFunction from './8-try';
 
-test("loadBalancer returns the value of the fastest promise", async () => {
-  const chinaSuccess = 'Downloading from China is faster';
-  const USASuccess = 'Downloading from USA is faster';
-
-  const promiseChina = new Promise(function(resolve, reject) {
-    setTimeout(resolve, 100, chinaSuccess);
+test("divideFunction gets the correct result", () => {
+    expect(divideFunction(10, 1)).toBe(10);
   });
 
-  const promiseSlowChina = new Promise(function(resolve, reject) {
-    setTimeout(resolve, 500, chinaSuccess);
-  });
-
-  const promiseUSA = new Promise(function(resolve, reject) {
-    setTimeout(resolve, 300, USASuccess);
-  });
-
-  const value = await loadBalancer(promiseChina, promiseUSA);
-  expect(value).toEqual('Downloading from China is faster');
-
-  const value2 = await loadBalancer(promiseSlowChina, promiseUSA);
-  expect(value2).toEqual('Downloading from USA is faster');
+test("divideFunction throw an error", () => {
+  expect(() => {
+    divideFunction(10, 0);
+  }).toThrowError('cannot divide by 0');
 });
+  
